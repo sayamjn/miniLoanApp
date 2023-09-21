@@ -1,0 +1,38 @@
+<!-- Show pending Loans -->
+<div class="main-content" id="pending-loan">
+    <div class="container">
+        <h1 class="text-center">All Pending Requests For Loan</h1>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Loan Amount</th>
+                        <th>Loan Term</th>
+                        <th>Loan Status</th>
+                        <th>Applied Date</th>
+                        <th>Approve Loan</th>
+                        <th>Reject Loan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let loanList of pendingLoanList) { %>
+                        <tr class="loan-details">
+                            <td><%= loanList.customer.name %></td>
+                            <td><%= loanList.amount %> </td>
+                            <td><%= loanList.term %> </td>
+                            <td><%= loanList.status %> </td>
+                            <td><%= loanList.appliedDate%> </td>
+                            <td>
+                                <a class="btn btn-success" href="/admin/loans/approve-loan/<%=loanList.id%>">Approve Loan</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-danger" href="/admin/loans/reject-loan/<%=loanList.id%>">Reject Loan</a>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>            
+</div>

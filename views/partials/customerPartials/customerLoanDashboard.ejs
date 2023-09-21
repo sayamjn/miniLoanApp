@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="/css/dashboard.css">
+<link rel="stylesheet" href="/css/customerLoanDashboard.css">
+<main class="main-container">
+    <!-- checking for user -->
+    <% if(locals.user) { %>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- TODO design for active list and in active list-->
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/customer/dashboard">Profile</a>
+                </li>
+                <li class="nav-item" onclick="toggleDashboards('customer-dashboard')">
+                    <a class="nav-link">Customer Loans </a>
+                </li>
+                <li class="nav-item" onclick="toggleDashboards('loan-dashboard')">
+                    <a class="nav-link">Loan history</a>
+                </li>
+                <li class="nav-item" onclick="toggleDashboards('pending-payment')">
+                    <a class="nav-link">Pending Loan Payments</a>
+                </li>
+                <li class="nav-item" onclick="toggleDashboards('paid-payment')">
+                    <a class="nav-link">Paid Loan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/customer/destroy-session">Sign Out</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- customer loan dashboard for approved loans and new loan application -->
+        <%- include('loansDashboard'); %>
+
+        <!-- all loans history of customer -->
+        <%- include('loanHistory'); %>
+        
+        <!-- All pending payment list -->
+        <%- include('pendingPayments'); %>
+
+        <!-- All pending payment list -->
+        <%- include('paidPayments'); %>
+
+    <% } %>
+</main>
+
+<script src="/javascript/customer.js"></script>

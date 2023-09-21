@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/css/dashboard.css">
+<main class="main-container">
+    <% if(locals.user) { %> 
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"">Customer Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/customer/loans/dashboard/<%=user._id%>">Loan Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/customer/destroy-session">Sign Out</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="container">
+                <h1>Customer Details</h1>
+                <p>Name: <%= user.name %></p>
+                <p>Email: <%= user.email %></p>
+                <!-- <button class="btn"> 
+                    <a href="#">Reset Password</a>
+                </button> -->
+            </div>
+        </div>
+    <% } %>
+</main>

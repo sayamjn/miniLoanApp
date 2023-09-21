@@ -1,0 +1,49 @@
+<!-- Customer dashboard div Main Content -->
+<div class="main-content" id="customer-dashboard">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="text-center">All Approved Loan List</h1>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Loan Amount</th>
+                                <th>Loan Term</th>
+                                <th>Loan Status</th>
+                                <th>Applied Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(let loanList of approvedLoanList) { %>
+                                <tr class="loan-details">
+                                    <td><%= loanList.amount %> </td>
+                                    <td><%= loanList.term %> </td>
+                                    <td><%= loanList.status %> </td>
+                                    <td><%= loanList.appliedDate%> </td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="btn-container">
+                    <button class="btn new-loan-btn" onclick="toggleLoanApplication()">
+                        Apply For Loan
+                    </button>
+                    <div class="new-loan-form-container" id="loan-form-container">
+                        <h1> New Loan Application </h1>
+                        
+                        <form action="/customer/loans/loanApplication/<%=user.id%>" method="post" onsubmit="closeLoanApplication()">
+                            <input type="hidden" name="customer" value="<%= user.id %>" required>
+                            <input type="number" name="amount" placeholder="Enter Loan Amount like. 10000" maxlength="9" required>
+                            <input type="number" name="term" placeholder="Enter Term In Weeks" required>
+                            <input type="submit" value="Submit Application" class="btn submit-btn">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>            
+</div>

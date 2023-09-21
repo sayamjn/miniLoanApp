@@ -1,0 +1,28 @@
+<!-- Show Loan History -->
+<div class="main-content" id="loan-dashboard">
+    <div class="container">
+        <h1 class="text-center">All Loan List</h1>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Loan Amount</th>
+                        <th>Loan Term</th>
+                        <th>Loan Status</th>
+                        <th>Applied Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let loanList of allLoanList) { %>
+                        <tr class="loan-details">
+                            <td><%= loanList.amount %> </td>
+                            <td><%= loanList.term %> </td>
+                            <td><%= loanList.status %> </td>
+                            <td><%= loanList.appliedDate%> </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>            
+</div>

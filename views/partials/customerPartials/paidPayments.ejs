@@ -1,0 +1,18 @@
+<!-- paid payments -->
+<div class="main-content" id="paid-payment">
+    <div class="container">
+        <h1>All Paid Payemnt List</h1>
+        <div class="paidPayment">
+            
+            <% for(let payments of paidPaymentList) { %> 
+                <div class="paid-payment-list">
+                    <p> Customer Name : <%= payments.loan.customer.name %> </p>
+                    <p> Loan Amount : <%= payments.totalAmount %> </p>
+                    <p> Total Term : <%= payments.totalTerm %> </p>
+                    <p> Payment Status : <%= payments.status %> </p>
+                </div>    
+            <% } %>
+
+        </div>
+    </div>            
+</div>

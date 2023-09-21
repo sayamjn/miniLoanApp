@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="/css/dashboard.css">
+<link rel="stylesheet" href="/css/adminLoanDashboard.css">
+<main class="main-container">
+    <% if(locals.user) { %> 
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/dashboard">Admin Profile</a>
+                </li>
+                <li class="nav-item" onclick="toggleDashboards('approved-loan')">
+                    <a class="nav-link">Approved Loan Request</a>
+                </li>
+                <li class="nav-item" onclick="toggleDashboards('pending-loan')">
+                    <a class="nav-link">Pending Loan Request</a>
+                </li>
+                <li class="nav-item" onclick="toggleDashboards('paid-loan')">
+                    <a class="nav-link">Paid Loans</a>
+                </li>
+                <li class="nav-item" onclick="toggleDashboards('rejected-loan')">
+                    <a class="nav-link">Rejected Loan Requests</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/destroy-session">Sign Out</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- approved loans partials -->
+        <%- include('approvedLoan'); %>
+
+        <!-- pending loans partials -->
+        <%- include('pendingLoan'); %>
+
+        <!-- paid loans partials -->
+        <%- include('paidLoan'); %>
+
+        <!-- rejected loans partials -->
+        <%- include('rejectedLoan'); %>
+        
+    <% } %>
+</main>
+<script src="/javascript/admin.js"></script>

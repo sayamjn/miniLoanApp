@@ -1,0 +1,30 @@
+<!-- Show paid loan requests -->
+<div class="main-content" id="paid-loan">
+    <div class="container">
+        <h1 class="text-center">All Paid Loans</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Loan Amount</th>
+                        <th>Loan Term</th>
+                        <th>Loan Status</th>
+                        <th>Applied Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let loanList of paidLoanList) { %>
+                        <tr class="loan-details">
+                            <td><%= loanList.customer.name %></td>
+                            <td><%= loanList.amount %> </td>
+                            <td><%= loanList.term %> </td>
+                            <td><%= loanList.status %> </td>
+                            <td><%= loanList.appliedDate%> </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>            
+</div>

@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="/css/sign_in.css">
+<main>
+    <div class="form-container">
+        <h1>Admin Sign In</h1>
+        <form action="/admin/create-session" method="post">
+            <input type="email" name="email" placeholder="Enter Your Email" required>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <input type="submit" value="Sign In" class="btn">
+        </form>
+
+        <p class="or">OR</p>
+
+        <button class="register-btn">
+            <a href="/admin/sign-up">New Admin</a>
+        </button>
+    </div>
+</main>

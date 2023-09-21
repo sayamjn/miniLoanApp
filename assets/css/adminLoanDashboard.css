@@ -1,0 +1,77 @@
+/* main content container */
+#approved-loan {
+    display: block;
+}
+
+#pending-loan {
+    display: none;
+}
+
+#paid-loan {
+    display: none;
+}
+
+#rejected-loan {
+    display: none;
+}
+
+/* list of loan */
+.container {
+    text-align: center;
+}
+
+/* Container for the table with horizontal scrolling */
+.table-container {
+    overflow-x: auto;
+}
+
+/* Style for table */
+.loan-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+}
+
+.loan-table th,
+.loan-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Style for table headers */
+.loan-table th {
+    background-color: #f2f2f2;
+    font-size: 2rem !important;
+}
+
+/* Style for alternating row colors */
+.loan-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.action-btn
+{
+    text-decoration: none;
+    padding: 0.2rem;
+}
+.action-btn:hover
+{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Media queries for responsiveness */
+
+/* Smaller screens */
+@media (max-width: 768px) {
+    .loan-table {
+        font-size: 1rem;
+    }
+
+    .loan-table th,
+    .loan-table td {
+        padding: 5px;
+    }
+}
