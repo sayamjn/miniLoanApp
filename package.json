@@ -6,9 +6,13 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "builds": [{
+      "src": "./index.js",
+      "use": "@now/node-server"
+    }]
   },
-  "author": "Anil Chaturvedi",
+  "author": "Sayam Jain",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
